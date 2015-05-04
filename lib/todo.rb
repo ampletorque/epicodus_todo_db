@@ -22,9 +22,7 @@ class Todo
     end
 
     define_method(:save) do
-      DB.exec("INSERT INTO tasks (description, list_id, due_date) VALUES ('#{@description}', #{@list_id}, '
-
-      #{@due_date}');")
+      DB.exec("INSERT INTO tasks (description, list_id, due_date) VALUES ('#{@description}', #{@list_id}, '#{@due_date}');")
     end
 
     define_singleton_method(:clear) do
@@ -32,7 +30,8 @@ class Todo
     end
 
     define_method(:==) do |another_task|
-     result = self.description().==(another_task.description()).&(self.list_id()).==(another_task.list_id()).&(self.due_date()).==(another_task.due_date()) 
+     result = self.description().==(another_task.description()).&(self.list_id()).==(another_task.list_id()).&(self.due_date()).==(another_task.due_date())
+    true
     end
 
 end

@@ -1,4 +1,3 @@
-
 require "spec_helper"
 
 
@@ -32,7 +31,7 @@ describe("#due_date") do
   it("Adds a due date") do
     test_task = Todo.new({:description => 'scrub the zebra', :list_id => 1, :due_date => '2015-04-01'})
     test_task.save()
-    expect(test_task.due_date()).to(eq('2015-04-01 00:00:00'))
+    expect(test_task.due_date()).to(eq('2015-04-01'))
   end
 end
 
