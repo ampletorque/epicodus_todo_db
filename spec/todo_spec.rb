@@ -1,14 +1,6 @@
-require('rspec')
-require('todo')
-require('pg')
 
-DB = PG.connect({:dbname => 'to_do_database_test'})
+require "spec_helper"
 
-RSpec.configure do |config|
-    config.after(:each) do
-      DB.exec("DELETE FROM tasks *;")
-    end
-  end
 
 describe(Todo) do
   describe('#==') do
