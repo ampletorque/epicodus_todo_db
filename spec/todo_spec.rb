@@ -35,7 +35,6 @@ describe("#due_date") do
   end
 end
 
-
 describe("#==") do
   it("is the same task if has same desc and list ID") do
     test_task = Todo.new({:description => 'scrub the zebra', :list_id => 1, :due_date => '2015-04-01'})

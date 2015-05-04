@@ -30,4 +30,17 @@ describe(List) do
     end
   end
 
+  describe("#sort_by_due_date") do
+    it("sorts by due date") do
+      test_task = Todo.new({:description => 'scrub the zebra', :list_id => 1, :due_date => '2015-04-01'})
+      test_task2 = Todo.new({:description => 'poke the parrot', :list_id => 1, :due_date => '2015-04-02'})
+      test_task3 = Todo.new({:description => 'dump the donkey', :list_id => 1, :due_date => '2015-04-03'})
+      test_task.save()
+      test_task2.save()
+      test_task3.save()
+      expect(list.sort_by_due_date().to(eq(1, 2, 3)))
+    end
+  end
+
+
 end

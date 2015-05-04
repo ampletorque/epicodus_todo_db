@@ -25,4 +25,10 @@ class List
   define_method(:==) do |another_list|
     self.name().==(another_list.name()).&(self.id().==(another_list.id()))
   end
+
+  define_method(:sort_by_due_date) do
+
+  end
+
+
 end
